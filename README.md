@@ -70,7 +70,7 @@ A skill for your coding assistant that stops it from burying the answer. Action 
 
 ## The rules
 
-10 rules. Full text in [SKILL.md](./skills/i-have-adhd/SKILL.md).
+13 rules. Full text in [SKILL.md](./skills/i-have-adhd/SKILL.md).
 
 1. Lead with the next action.
 2. Number multi-step tasks.
@@ -82,6 +82,11 @@ A skill for your coding assistant that stops it from burying the answer. Action 
 8. Matter-of-fact errors.
 9. Cap lists to 5 items.
 10. No preamble. No recap. No closers.
+11. A label never travels alone: "Phase 2 (auth middleware)", not "Phase 2".
+12. The latest message stands alone, even when a subagent interrupts.
+13. Offer a walkthrough for plans, specs, and architecture documents.
+
+`/i-have-adhd:walkthrough <path>` walks through a document one section at a time: what it says, why, what changes, what to decide.
 
 ## Tune it
 

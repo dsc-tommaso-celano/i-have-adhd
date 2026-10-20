@@ -26,10 +26,10 @@ Agents may read and reference any GitHub issue or pull request. Commenting has n
 
 | Area | Location | Purpose |
 | --- | --- | --- |
-| Canonical skill | `skills/i-have-adhd/SKILL.md` | The source of truth for the 10 ADHD-friendly response rules. |
+| Canonical skill | `skills/i-have-adhd/SKILL.md` | The source of truth for the 13 ADHD-friendly response rules. |
 | Skill mirror | `.cursor/skills/i-have-adhd/SKILL.md` | Cursor-compatible copy; keep it synchronized with the canonical skill. |
 | Claude and Codex metadata | `.claude-plugin/`, `.codex-plugin/`, `.agents/plugins/` | Plugin manifests and marketplace metadata. |
-| Shared hooks | `hooks/hooks.json`, `hooks/always-on.*` | Hook declarations and cross-platform always-on behavior. |
+| Shared hooks | `hooks/hooks.json`, `hooks/always-on.*`, `hooks/reader-support.mjs`, `hooks/side-session.mjs` | Hook declarations, cross-platform always-on behavior, Claude Code reader checks, and the walkthrough side session. |
 | Pi and OMP | `package.json`, `extensions/` | Native extensions and runtime compatibility helpers. |
 | OpenCode | `.opencode/` | Auto-discovered plugin and command entry points for V1 (1.18.29+) and V2. |
 | Other runtimes | `qwen-extension.json`, `kimi.plugin.json`, `gemini-extension.json`, `GEMINI.md`, `plugin.json` | Qwen, Kimi, Gemini, and additional plugin metadata. |
