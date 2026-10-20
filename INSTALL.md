@@ -173,6 +173,24 @@ rm ~/.claude/.i-have-adhd-always
 
 The hook only fires when the flag file exists, so installing the plugin changes nothing by itself. "stop adhd mode" still turns it off for the current session.
 
+### Reader checks and walkthroughs
+
+While ADHD mode is on (always-on flag, or `/i-have-adhd` typed this session), two more hooks back up rules 11 to 13:
+
+1. A `Stop` hook reads Claude's final message before the turn ends. If something is missing, Claude sends one short follow-up with it:
+   - a **Where we are** block when a subagent or background task started the turn and you have not answered Claude's earlier messages;
+   - a walkthrough offer when the turn wrote a plan, spec, architecture document, ADR, or RFC;
+   - a short legend for labels such as "Phase 2", "WP-3", or "§4.1" that appear without their meaning.
+2. A `PostToolUse` hook reminds Claude to offer the walkthrough right after it writes such a document, including plan-mode plans.
+
+Walk through a document in a side session: a fork with the conversation so far, so the main session stays short:
+
+```bash
+claude --resume <session-id> --fork-session "/i-have-adhd:walkthrough docs/plan.md"
+```
+
+Run it from the project folder. When you accept a walkthrough offer, Claude can open this in a new terminal window for you. `/i-have-adhd:walkthrough <path>` also works inside any session.
+
 </details>
 
 
